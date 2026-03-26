@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Code</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' ry='18' fill='%233655a1'/%3E%3Ctext x='50' y='60' font-size='50' text-anchor='middle' font-family='Segoe UI, Arial, sans-serif' fill='white'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo-card">
+      <div class="logo-icon">📘</div>
+      <div class="logo-text">Study Code</div>
+    </div>
+    <p>Welcome to our intelligent study platform! Enter a topic below and our AI will generate a detailed, personalized revision guide to help you master the subject.</p>
+
+    <form id="guideForm">
+      <div class="form-group">
+        <label for="topic">Study Topic:</label>
+        <input type="text" id="topic" placeholder="e.g., Photosynthesis, World War II, Calculus" required>
+      </div>
+
+      <div class="form-group">
+        <label for="level">Study Level:</label>
+        <select id="level" required>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="format">Guide Format:</label>
+        <select id="format" required>
+          <option value="bullets">Bullet Points</option>
+          <option value="paragraphs">Paragraphs</option>
+          <option value="qa">Q&A Format</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="apiKey">Hugging Face API Token (optional for AI generation):</label>
+        <input type="password" id="apiKey" placeholder="Enter your Hugging Face API token for real AI">
+        <small>Note: Get a free token from huggingface.co/settings/tokens. Without it, mock AI will be used.</small>
+      </div>
+
+      <button type="submit">Generate Revision Guide</button>
+    </form>
+
+    <div id="loading" class="loading">AI is generating your personalized revision guide...</div>
+
+    <div id="error" class="error"></div>
+
+    <div id="output" class="output">
+      <h2>Your AI-Generated Revision Guide</h2>
+      <div class="tabs" id="tabs"></div>
+      <div id="guideContent" class="guide-content"></div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
